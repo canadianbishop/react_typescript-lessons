@@ -1,23 +1,20 @@
-import { type PropsWithChildren } from "react";
+import { PropsWithChildren } from "react"
+interface ComponentTypes{
+  name:string, 
+  id: number,
+  // children?:React.ReactNode
+}
 
-// interface componetProps {
-//   name:string,
-//    id:number
-//    children?:React.ReactNode
-//   }
+type component = PropsWithChildren<ComponentTypes>
 
-  type ComponentProps = PropsWithChildren< {
-    name:string ,
-    id:number
-  }>
-
-function Component({name, id, children}: ComponentProps) {
+const Component = ({name, id, children}: component) => {
   return (
     <div>
-      <h1>Name:{name}</h1>
-      <h1>Id:{id}</h1>
+      <h1>Name: {name}</h1>
+      <h1>ID: {id}</h1>
       {children}
     </div>
-  );
+  )
 }
-export default Component;
+
+export default Component

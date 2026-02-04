@@ -1,9 +1,27 @@
-function Component() {
+import { ThemeProvider, UseTheme } from "./context";
+
+
+function ParentComponent(){
   return (
-    <div>
-      <h2>React & Typescript</h2>
-      <h2>Context API</h2>
-    </div>
-  );
+    <ThemeProvider>
+       <Component/>
+    </ThemeProvider>
+  )
 }
-export default Component;
+
+
+
+const Component = () => {
+const context = UseTheme();
+
+console.log(context)
+
+  return (
+    <div> 
+     <h2>react Context </h2>
+    </div>
+  )
+}
+
+
+export default ParentComponent
